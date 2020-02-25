@@ -1,0 +1,70 @@
+{% load static %}
+<html>
+<head>
+    <title>Django Girls blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<div class="container mt-sm-4">
+    <div class="row"> 
+        <div class="col-sm-3">
+            <span class="navbar-brand mb-0 h1">AskPupkin</span>
+        </div>
+        <div class="col-sm-4">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color: green;">ASK!</button>
+        </div>
+        <div class="col-sm-3">
+            <h6>Dr. Pepper</h6>
+            <a href="#">settings</a>
+            <a class="ml-sm-2" href="#">log out</a>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <span class="navbar-brand mb-0 h1">New Questions</span>
+            <a href="#">Hot Questions</a>
+        </div>
+        <div class="col-sm-4">
+            <div class="row">
+                <h3>Popular tags</h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h6>perl</h6>
+                </div>
+                <div class="col-sm-4" style="color:rebeccapurple">
+                    <h5>python</h5>
+                </div>
+                <div class="col-sm-4" style="color:rgb(15, 198, 198)">
+                    <h6>Techno Park</h6>
+                </div>
+            </div>
+            <div class="row">
+                
+            </div>
+            <div class="row">
+                
+            </div>
+            <div class="row">
+                
+            </div>
+        </div>
+    </div>
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+</div>
+</html>
